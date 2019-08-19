@@ -14,8 +14,8 @@ private:
 public:
     Node(const T &value, Node<T> *next = nullptr);
 
-    void setNext(Node<T> *next);
-    const Node<T> *getNext() const;
+    void setNext(Node<T> *next) { this->next = next; };
+    const Node<T> *getNext() const { return next; };
     const T &getValue() const;
 };
 
@@ -24,16 +24,6 @@ Node<T>::Node(const T &value, Node<T> *next)
 {
     this->value = value;
     this->next = next;
-}
-template <class T>
-void Node<T>::setNext(Node<T> *next)
-{
-    this->next = next;
-}
-template <class T>
-const Node<T> *Node<T>::getNext() const
-{
-    return next;
 }
 template <class T>
 const T &Node<T>::getValue() const
